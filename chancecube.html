@@ -1,0 +1,55 @@
+<head>
+  <title>SWCCG | ChanceCube</title>
+</head>
+
+<body>
+  <h1>Welcome to ChanceCube!</h1>
+  {{> loginButtons}}
+
+  <h2>Users</h2>
+  <ul>
+    {{#each users}}
+      {{> user}}
+    {{/each}}
+  </ul>
+
+  <h2>My Pack</h2>
+  <ol>
+    {{#each myPack.cards}}
+      {{> card}}
+    {{/each}}
+  </ol>
+
+  <h2>My Deck</h2>
+  <ol>
+    {{#each myDeck.cards}}
+      {{> card}}
+    {{/each}}
+  </ol>
+
+  <h2>Debug: Packs</h2>
+  <ul>
+    {{#each packs}}
+      {{> cards}}
+    {{/each}}
+  </ul>
+
+  <h2>Debug: Decks</h2>
+  <ul>
+    {{#each decks}}
+      {{> cards}}
+    {{/each}}
+  </ul>
+</body>
+
+<template name="user">
+  <li>{{username}}</li>
+</template>
+
+<template name="cards">
+  <li>{{owner}}: {{#each cards}} {{definition}} {{/each}}</li>
+</template>
+
+<template name="card">
+  <li><a class="card" data-index="{{index}}" href="#">{{definition}}</a></li>
+</template>
