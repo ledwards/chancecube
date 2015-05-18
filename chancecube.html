@@ -6,6 +6,10 @@
   <h1>Welcome to ChanceCube!</h1>
   {{> loginButtons}}
 
+  <h3>Pack: {{game.pack}} Card: {{game.card}}</h3>
+  <br/>
+  <a href="#" id="download">Download Deck</a>
+
   <h2>Users</h2>
   <ul>
     {{#each users}}
@@ -43,7 +47,7 @@
 </body>
 
 <template name="user">
-  <li>{{username}}</li>
+<li>{{username}}</li>
 </template>
 
 <template name="cards">
