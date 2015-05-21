@@ -4,11 +4,13 @@
 
 <body>
   <h1>Welcome to ChanceCube!</h1>
+  <h3>{{message}}</h3>
   {{> loginButtons}}
 
   <h3>Pack: {{game.pack}} Card: {{game.card}}</h3>
-  <br/>
-  <a href="#" id="download">Download Deck</a>
+  <div id="download" class={{game.status}}>
+    <a href="#">Download Deck</a>
+  </div>
 
   <h2>Users</h2>
   <ul>
@@ -18,7 +20,7 @@
   </ul>
 
   <h2>My Pack</h2>
-  <ol>
+  <ol id="pack" class={{disabled}}>
     {{#each myPack.cards}}
       {{> card}}
     {{/each}}
@@ -55,5 +57,5 @@
 </template>
 
 <template name="card">
-  <li><a class="card" data-index="{{index}}" href="#">{{definition}}</a></li>
+<li><a class="card" data-id="{{_id}}" href="#">{{definition}}</a></li>
 </template>

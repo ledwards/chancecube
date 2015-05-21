@@ -1,5 +1,14 @@
 /* CSS declarations go here */
 
-a#download {
+div#download {
   display: none;
+}
+
+div#download.finished {
+  display: block;
+}
+
+ol.disabled a.card {
+  color: black;
+  text-decoration: none;
 }
